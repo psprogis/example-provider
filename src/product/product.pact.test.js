@@ -21,7 +21,7 @@ describe("Pact Verification", () => {
     }
 
     // For builds triggered by a 'contract content changed' webhook,
-    // just verify the changed pact. The URL will bave been passed in
+    // just verify the changed pact. The URL will have been passed in
     // from the webhook to the CI job.
     const pactChangedOpts = {
       pactUrls: [process.env.PACT_URL]
@@ -33,7 +33,7 @@ describe("Pact Verification", () => {
       //consumerVersionTag: ['master', 'prod'], //the old way of specifying which pacts to verify
       consumerVersionSelectors: [{ tag: 'master', latest: true }, { deployed: true } ], // the new way of specifying which pacts to verify
       pactBrokerUrl: process.env.PACT_BROKER_BASE_URL,
-      enablePending: false,
+      enablePending: true,
       includeWipPactsSince: undefined
     }
 
